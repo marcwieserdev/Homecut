@@ -1,3 +1,12 @@
+/*
+ * Marc Wieser Copyright (c) 2016.
+ * Created by Marc Wieser on 22/10/2016
+ * If you have any problem or question about this work
+ * please contact the author at marc.wieser33@gmail.com
+ *
+ * The following code is owned by Marc Wieser you can't
+ *  use it without any authorization or special instructions
+ */
 package com.marc_wieser.homecut.content_provider;
 
 import android.content.Context;
@@ -5,10 +14,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.marc_wieser.homecut.content_provider.HomecutContract.ShortcutEntry;
-
-/**
- * Created by marc on 14/10/2016.
- */
 
 public class HomecutDBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "homecut.db";

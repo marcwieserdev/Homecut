@@ -11,7 +11,15 @@ import android.widget.TextView;
 
 import com.marc_wieser.homecut.content_provider.HomecutContract;
 
-import org.apache.commons.io.FileUtils;
+/*
+ * Marc Wieser Copyright (c) 2016.
+ * Created by Marc Wieser on 22/10/2016
+ * If you have any problem or question about this work
+ * please contact the author at marc.wieser33@gmail.com
+ *
+ * The following code is owned by Marc Wieser you can't
+ *  use it without any authorization or special instructions
+ */
 
 /**
  * Created by marc on 14/10/2016.
