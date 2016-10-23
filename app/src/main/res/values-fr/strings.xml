@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Marc Wieser Copyright (c) 2016.
+  ~ Created by Marc Wieser on 23/10/2016
+  ~ If you have any problem or question about this work
+  ~ please contact the author at marc.wieser33@gmail.com
+  ~
+  ~ The following code is owned by Marc Wieser you can't
+  ~ use it without any authorization or special instructions
+  -->
+
+<resources>
+    <string name="app_name">Homecut</string>
+    <string name="get_a_shortcut_on_your_homescreen">Obtenez un raccourci sur votre écran d\'accueil !</string>
+    <string name="homecut_let_you_get_a_shortcut_to_any_file_with_a_simple_file_sharing">Homecut vous permet d\'avoir un raccourci de n\'importe quel fichier avec un simple partage de fichier</string>
+    <string name="start_sharing_with_homecut">Retour à l\'écran d\'accueil</string>
+</resources>

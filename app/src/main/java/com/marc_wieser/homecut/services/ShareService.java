@@ -10,19 +10,16 @@
 package com.marc_wieser.homecut.services;
 
 import android.app.IntentService;
-import android.content.ComponentName;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
+import android.database.Cursor;
 import android.net.Uri;
+import android.provider.OpenableColumns;
 
 import com.marc_wieser.homecut.R;
-import com.marc_wieser.homecut.content_provider.HomecutContract;
-import com.marc_wieser.homecut.content_provider.HomecutContract.ShortcutEntry;
 
 
 public class ShareService extends IntentService {
+    public final static String ACTION_CREATE_SHARING = "create_share";
 
     public ShareService() {
         super("ShareService");
@@ -44,21 +41,48 @@ public class ShareService extends IntentService {
     private void handleActionSend(Intent intent){
         String name, type;
         Uri stream = intent.getParcelableExtra(Intent.EXTRA_STREAM);
+        String[] projection = {
+                OpenableColumns.DISPLAY_NAME
+        };
+        if (stream == null){
+            //TODO : put error message
+            return;
+        }
+        Cursor file = getContentResolver().query(stream, projection, null, null, null);
+        if (file == null || !file.moveToFirst()){
+            //TODO : put error message
+            return;
+        }
 
         name = intent.getStringExtra(Intent.EXTRA_TITLE);
+        name = name == null || name.isEmpty() ? file.getString(0) : name;
+        file.close();
         type = intent.getType();
 
         Intent shortcutIntent = new Intent(Intent.ACTION_VIEW);
         shortcutIntent.setType(type);
         shortcutIntent.setData(stream);
 
+        int resourceID;
+        if (type.startsWith("pdf") || type.endsWith("pdf")){
+            resourceID = R.drawable.ic_pdf;
+        } else if (type.startsWith("image") || type.endsWith("image")){
+            resourceID = R.drawable.ic_photo;
+        } else if (type.startsWith("video") || type.endsWith("video")) {
+            resourceID = R.drawable.ic_movie;
+        } else if (type.startsWith("audio") || type.endsWith("audio")){
+            resourceID = R.drawable.ic_audio;
+        } else {
+            resourceID = R.drawable.ic_file;
+        }
 
+        Intent chooser = Intent.createChooser(shortcutIntent, "Open With");
         Intent addIntent = new Intent();
-        addIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, chooser);
         addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
         addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
                 Intent.ShortcutIconResource.fromContext(getApplicationContext(),
-                        R.mipmap.ic_launcher));
+                        resourceID));
 
         addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
         getApplicationContext().sendBroadcast(addIntent);

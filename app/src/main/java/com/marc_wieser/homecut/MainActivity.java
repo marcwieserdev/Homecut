@@ -10,10 +10,10 @@
 package com.marc_wieser.homecut;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.View;
 
 import com.marc_wieser.homecut.services.ShareService;
 
@@ -49,13 +49,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         if (intent != null && Intent.ACTION_SEND.equals(intent.getAction())){
+            logIntent(intent);
             intent.setClass(this, ShareService.class);
             startService(intent);
             finish();
         }
-        setContentView(R.layout.activity_main);
-        if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, new ShortcutList(), ShortcutList.TAG).commit();
-        }
+        setContentView(R.layout.welcoming);
+        findViewById(R.id.get_started).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    finish();
+            }
+        });
     }
 }
