@@ -14,4 +14,6 @@
     <string name="get_a_shortcut_on_your_homescreen">Obtenez un raccourci sur votre écran d\'accueil !</string>
     <string name="homecut_let_you_get_a_shortcut_to_any_file_with_a_simple_file_sharing">Homecut vous permet d\'avoir un raccourci de n\'importe quel fichier avec un simple partage de fichier</string>
     <string name="start_sharing_with_homecut">Retour à l\'écran d\'accueil</string>
+    <string name="error_permission">Sans cette permission, nous ne pouvons pas créer votre raccourci :(</string>
+    <string name="content_desc_house_with_garden_and_a_city_in_background">Maison avec jardin et une ville en fond</string>
 </resources>

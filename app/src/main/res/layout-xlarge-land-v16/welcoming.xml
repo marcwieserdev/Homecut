@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Marc Wieser Copyright (c) 2016.
-  ~ Created by Marc Wieser on 23/10/2016
+  ~ Created by Marc Wieser on 12/11/2016
   ~ If you have any problem or question about this work
   ~ please contact the author at marc.wieser33@gmail.com
   ~
   ~ The following code is owned by Marc Wieser you can't
   ~ use it without any authorization or special instructions
   -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:contentDescription="@string/content_desc_house_with_garden_and_a_city_in_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/welcoming_bg"
+        android:layout_gravity="bottom"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:cropToPadding="false"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="30dp"
         android:textColor="#fff"
+        android:fontFamily="sans-serif-light"
         android:textStyle="bold"
         android:text="@string/get_a_shortcut_on_your_homescreen"
         android:id="@+id/title"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="25dp"
-        android:textColor="#fff"
-        android:id="@+id/description"
-        android:text="@string/homecut_let_you_get_a_shortcut_to_any_file_with_a_simple_file_sharing"/>
+
     <android.support.v7.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,17 +55,18 @@
         android:textColor="#fff"
         android:shadowColor="#202020"
         android:id="@+id/get_started"
-        />
+        android:textSize="28sp" />
 
-    <ImageView
-        android:contentDescription="@string/content_desc_house_with_garden_and_a_city_in_background"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/welcoming_bg"
-        android:layout_gravity="bottom"
-        android:adjustViewBounds="true"
-        android:id="@+id/imageView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:layout_marginTop="25dp"
+        android:textColor="#fff"
+        android:id="@+id/description"
+        android:text="@string/homecut_let_you_get_a_shortcut_to_any_file_with_a_simple_file_sharing"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

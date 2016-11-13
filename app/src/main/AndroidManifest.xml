@@ -4,8 +4,9 @@
     <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
     <uses-feature android:required="false" android:name="android.hardware.touchscreen"/>
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@drawable/ic_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"

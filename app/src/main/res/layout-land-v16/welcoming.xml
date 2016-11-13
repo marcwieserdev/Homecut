@@ -15,8 +15,8 @@
     android:layout_height="match_parent">
     <ImageView
         android:contentDescription="@string/content_desc_house_with_garden_and_a_city_in_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/welcoming_bg_land"
         android:scaleType="fitXY"
         android:layout_alignParentBottom="true"
@@ -46,10 +46,10 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="35dp"
                 android:textColor="#fff"
+                android:fontFamily="sans-serif-light"
                 android:textStyle="bold"
                 android:text="@string/get_a_shortcut_on_your_homescreen"
                 android:id="@+id/title"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

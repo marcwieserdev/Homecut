@@ -3,4 +3,6 @@
     <string name="get_a_shortcut_on_your_homescreen">Get a shortcut on your homescreen!</string>
     <string name="homecut_let_you_get_a_shortcut_to_any_file_with_a_simple_file_sharing">Homecut let you get a shortcut to any file with a simple file sharing</string>
     <string name="start_sharing_with_homecut">Go back to home screen</string>
+    <string name="error_permission">Without this permission, we can\'t create your shortcut :(</string>
+    <string name="content_desc_house_with_garden_and_a_city_in_background">House with garden and a city in background</string>
 </resources>
